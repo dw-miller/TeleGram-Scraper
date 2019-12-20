@@ -63,7 +63,7 @@ with open(input_file, encoding='UTF-8') as f:
  
 chats = []
 last_date = None
-chunk_size = 200
+chunk_size = 2000
 groups=[]
  
 result = client(GetDialogsRequest(
@@ -113,7 +113,7 @@ for user in users:
 	            sys.exit(re+"[!] Invalid Mode Selected. Please Try Again.")
 	        client(InviteToChannelRequest(target_group_entity,[user_to_add]))
 	        print(gr+"[+] Waiting for 10-30 Seconds...")
-	        time.sleep(random.randrange(1, 3))
+	        time.sleep(random.randrange(10, 20))
 	    except PeerFloodError:
 	        print(re+"[!] Getting Flood Error from telegram. \n[!] Script is stopping now. \n[!] Please try again after some time.")
 	    except UserPrivacyRestrictedError:
